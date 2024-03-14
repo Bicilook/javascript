@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Muñeco Movible con JavaScript</title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <!-- Estilos CSS personalizados -->
+  <style>
+    .container {
+      position: relative;
+    }
+
+    .muñeco {
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  </style>
+</head>
+<body>
+
+<div class="container mt-5">
+  <img src="https://via.placeholder.com/150" alt="Muñeco" class="muñeco" id="muñeco">
+</div>
+
+<div class="container mt-3">
+  <button class="btn btn-primary" onclick="moverMuñeco()">Mover Muñeco</button>
+</div>
+
+<!-- Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<script>
+  function moverMuñeco() {
+    var muñeco = document.getElementById('muñeco');
+    var currentPosition = muñeco.offsetLeft;
+    var newPosition = currentPosition + 50; 
+
+    muñeco.style.left = newPosition + 'px';
+  }
+</script>
+</body>
+</html>
